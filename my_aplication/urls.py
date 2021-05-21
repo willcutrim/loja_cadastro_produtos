@@ -1,7 +1,8 @@
 from django.urls.conf import path
 from django.urls import path
-from my_aplication import views
-
+from . import views
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.cadastrar_produtos, name='home'),
+    path('deletar/<int:id>/', views.deletar_produto, name='deletar'),
+    path('<int:id>/', views.editar_produto, name='editar'),
 ]

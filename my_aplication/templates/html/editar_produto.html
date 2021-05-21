@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Editar de produtos {%  endblock title %}
+
+{% block content %} 
+    <div class="row">
+        <div class="col-sm-8 offset-2">
+            <h1 class="text-center alert alert-info">Atualizar produto</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Atualizar" class="btn btn-success">
+                <a href="{% url 'home'%}"class="btn btn-light btn-sm">voltar</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
