@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from my_aplication.forms import ProdutoForms
 from loja_cadastro_produtos.models import Produto
 from django.contrib import messages
@@ -28,6 +28,7 @@ def editar_produto(request, id):
         form = ProdutoForms(request.POST, instance=produto)
         if form.is_valid():
             form.save()
+            atualizado = messages.success(request, 'Produto atualizado com sucesso!')
         else:
             produto = Produto.objects.get(pk=id)
     form = ProdutoForms(instance=produto)

@@ -6,6 +6,17 @@
     <div class="row">
         <div class="col-sm-8 offset-2">
             <h1 class="text-center alert alert-info">Atualizar produto</h4>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} fade show" role="alert" id="msg">
+                    {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span
+                </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
             <form action="" method="post">
                 {% csrf_token %}
                 {{form.as_p}}
