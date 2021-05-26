@@ -11,10 +11,6 @@ class ProdutoForms(forms.ModelForm):
             'preco_do_produto': forms.TextInput(attrs={'class': 'form-control'}),
             'marca_do_produto': forms.TextInput(attrs={'class': 'form-control'})
         }
-        """
-    nome = forms.CharField(label="")
-    preco_do_produto = forms.DecimalField(label="")
-    marca_do_produto = forms.CharField(label="")
-    """
+
    
     
